@@ -34,30 +34,51 @@
 
 
 
-#include<bits/stdc++.h>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-	int n,m;
-	cin>>n>>m;
-	int arr[n];
-	for(int i=0;i<n;i++)
+class Solution{
+    public:
+    long long findMinDiff(vector<long long> a, long long n, long long m){
+    long long min = INT_MAX;
+    int d;
+    sort(a.begin(),a.end());
+    if(n == 0 || m == 0)
+    {
+        return 0;
+    }
+    for(int i = 0;i+m-1<n;i++)
+    {
+        d = a[i+m-1] - a[i];
+        if(d < min)
+        {
+            min = d;
+        }
+    }
+    return min;
+    }   
+    
+};
+
+int main() {
+	long long t;
+	cin>>t;
+	while(t--)
 	{
-		cin>>arr[i];
+		long long n;
+		cin>>n;
+		vector<long long> a;
+		long long x;
+		for(long long i=0;i<n;i++)
+		{
+			cin>>x;
+			a.push_back(x);
+		}
+		
+		long long m;
+		cin>>m;
+		Solution ob;
+		cout<<ob.findMinDiff(a,n,m)<<endl;
 	}
-
-	if(n == 0 || m == 0)
-	{
-		return 0;
-	}
-
-	sort(arr,arr+n);
-
-
-	int min = arr[m-1] - arr[0];
-
-	cout<<min;
-
-}
+	return 0;
+} 
