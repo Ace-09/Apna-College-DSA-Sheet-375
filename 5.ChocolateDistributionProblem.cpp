@@ -80,5 +80,5 @@ int main() {
 		Solution ob;
 		cout<<ob.findMinDiff(a,n,m)<<endl;
 	}
-	return 0;
+    return 0;
 } 
