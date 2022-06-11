@@ -1,29 +1,36 @@
-#include<iostream>
+// Write a program to reverse an array or string
+
+
+
+#include<bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-	int n;
-	cin>>n;
-	int a[n],rev[n];
+string reverseWord(string str);
 
-	for(int i = 0; i < n; i++)
+int main() {
+	
+	int t;
+	cin>>t;
+	while(t--)
 	{
-		cin>>a[i];
+	string s;
+	cin >> s;
+	
+	cout << reverseWord(s) << endl;
 	}
+	return 0;
+	
+}
 
-	cout<<"\nOriginal Array: \n";
+string reverseWord(string str){
+    
+  int n;
+  string reverseWord;
+  n = str.length();
+  for(int i =n-1;i>=0;i--)
+  {
+      reverseWord = reverseWord + str[i];
+  }
+  return reverseWord;
 
-
-	for(int i = 0; i < n; i++)
-	{
-		cout<<a[i];
-	}
-
-	cout<<"\nReverse Array: \n";
-
-	for(int i = n-1 ; i >= 0; i--)
-	{
-		cout<<a[i];
-	}
 }
